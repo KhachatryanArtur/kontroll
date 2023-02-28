@@ -31,6 +31,17 @@ def print_average(scores):
     avg_score = sum(scores) / len(scores)
     print(f"Средний балл соискателей: {avg_score}")
 
+def delete_applicant(applicants, scores):
+    print("Введите ФИО удаляемого соискателя:")
+    name = input()
+    if name in applicants:
+        index = applicants.index(name)
+        applicants.pop(index)
+        scores.pop(index)
+        print(f"Соискатель {name} успешно удален")
+    else:
+        print("Соискатель не найден")
+
 def sisseastumine():
     n = int(input("Введите количество соискателей: "))
     applicants, scores = input_applicants(n)
@@ -40,7 +51,7 @@ def sisseastumine():
         print("2. Список соискателей и их баллов в алфавитном порядке")
         print("3. Найти n соискателей с худшими результатами")
         print("4. Найти средний балл соискателей")
-        print("5. Свой вариант")
+        print("5. Удалить из списка соискателя")
         print("0. Выход")
         choice = int(input("Ваш выбор: "))
         if choice == 0:
@@ -55,4 +66,5 @@ def sisseastumine():
         elif choice == 4:
             print_average(scores)
         elif choice == 5:
-            print("Введите свой вариант")
+            delete_applicant(applicants, scores)
+
