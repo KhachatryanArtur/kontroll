@@ -9,7 +9,7 @@ while True:
     print("2. Список соискателей и их баллов в алфавитном порядке")
     print("3. Найти n соискателей с худшими результатами")
     print("4. Найти средний балл соискателей")
-    print("5. Свой вариант")
+    print("5. Удалить из списка соискателя")
     print("0. Выход")
     
     choice = int(input("Ваш выбор: "))
@@ -31,4 +31,4 @@ while True:
         print_average(scores)
         
     elif choice == 5:
-        print("Введите свой вариант")
+        delete_applicant(applicants, scores)
